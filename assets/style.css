@@ -3,7 +3,32 @@ h1 {
     background-color: Navy;
     color: white;
 }
+.searchBtn {
+        border: 1px solid black;
+        border-radius: 15px;
+        border-style: solid black;
+        color: white;
+        background-color: steelblue;
+        font-weight: bold;
+        padding: 10px 24px;
+        size: automatic;
+    }
+ .cityBtn {
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px 24px;
+    padding-bottom: 15px;
+    border-style: solid black;
+    color: white;
+    background-color: Teal;
+    font-weight: bold;
+    Size: automatic;
+}  
 
+.cityBtn:hover {
+    background-color:navy;
+    color: steelblue;
+}
 /* @media(min-width: 576px) {...}
 @media(min-width: 768px) {...}
 @media(min-width: 992px) {...}
