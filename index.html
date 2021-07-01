@@ -15,12 +15,13 @@
 <body>
 <div class ="row min-vh-100 no gutters">
     <header class="col-12 col-lgp3 bg-light text-dark sitcky-top d-flex flex-column p-4 p-lg-3">
-    <h2 class ="text-center">Search for a City:</h2>
+    <h2 class ="text-left">Search for a City:</h2>
     <form id="task-form">
         <div class="form-group">
-            <input type="text" name="City-name" placeholder="Enter City"/>
+            <input type="text" id="searchTerm" value="Mystic"/>
             <div class ="form-group">
-                <button class="searchBtn" id="Search" type="submit">Search</button> 
+                <button onclick="myfunction()" class="searchBtn" id="SearchTerm" type="submit">Search</button> 
+            <!-- <section>
             <div class="row">
             <div class="col-sm-1">
                 <button class="cityBtn" id="City" type="submit">1stCity</button> 
@@ -33,7 +34,11 @@
                 <button class="cityBtn" id="City" type="submit">8thCity</button>       
             </div>
             </div>
-    </header> 
-</div>    
+        </section> -->
+    </header>  
+</div>
+<script src="assets/script.js"></script> 
 </body>
 </html>
+
+
