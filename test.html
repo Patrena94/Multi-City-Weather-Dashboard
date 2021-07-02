@@ -8,14 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <h1 class ="text-center">
-        <span class ="oi oi-task d-inline d-lg-none"></span> Multi-City Weather Dashboard</h1>
+    <title>Document</title>
 </head>
-
 <body>
-    <div class="row min-vh-100 no gutters">
-    <header class="col-12 col-lgp3 bg-light text-dark sitcky-top d-flex flex-column p-4 p-lg-3"> 
+ <div class="row">
+    <div class="col-sm-3">
         <h2 class ="text-left">Search for a City:</h2>
         <form id="city-form">
             <div class="form-group">
@@ -24,36 +21,25 @@
                     <button class="searchBtn" id="searchBtn">Search</button> 
                 </form> 
             <section>
-            <div class="row">
-            <div class="col-sm-1">
-                <button class="cityBtn" id="City" type="submit">1stCity</button> 
+            <div class="col-sm-4">
+                <button class="btn btn-danger">test</button>
+                <!-- <button class="cityBtn" id="City" type="submit">1stCity</button> 
                 <button class="cityBtn" id="City" type="submit">2ndCity</button>
                 <button class="cityBtn" id="City" type="submit">3rdCity</button>  
                 <button class="cityBtn" id="City" type="submit">4thCity</button>  
                 <button class="cityBtn" id="City" type="submit">5thCity</button>  
                 <button class="cityBtn" id="City" type="submit">6thCity</button>
                 <button class="cityBtn" id="City" type="submit">7thCity</button> 
-                <button class="cityBtn" id="City" type="submit">8thCity</button>       
+                <button class="cityBtn" id="City" type="submit">8thCity</button>        -->
             </div>
             </div>
         </section>
-                </div>
-        <main class="flex-row justify-space-between">  
-            <div class="col-12-col-md-8"></div>
-        <div class="card">
-            <h2 class ="card-header">List:<span id="searchTerm"></span></h2>
-            <div id="city-container" class="list-group"></div>  
-        </div>      
-        <div class="col-col-12-col-md-8"></div>
-        <div class="col-12col-md-8">
-            <h3>cityandDate<span id="searchTerm"></span></h3> 
-        <div class="col-12-col-md-8"></div>
-        <div class="card">
-            <h4 class =subtitle">5-Day Forecaset:</h4>
-          </div>
-        </main>
-<script src=./assets/script.js></script>    
+    </div> 
+    </div>
+    <div class="col-sm-9"><textarea id="currentDay"class="formControl h-500 w-250 p-0"></textarea>
+    <div class="row">
+    <div class="col-sm-9"><textarea id="5-Day Forecast"class="formControl h-500 w-250 p-0"></textarea></div>
+    </div>
+    </div>  
 </body>
 </html>
-
-
