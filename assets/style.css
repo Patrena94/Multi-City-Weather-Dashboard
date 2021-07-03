@@ -12,7 +12,22 @@ h1 {
         padding: 10px 24px;
         size: automatic;
     }
- 
+ input {
+     border-radius: 15px;
+ }
+ .btn-danger {
+    border: 1px solid black;
+    border-radius: 15px;
+    border-style: solid black;
+    color: black;
+    background-color: slategrey;
+    font-weight: bold;
+    padding: 10px 24px;
+    size: automatic;
+}   
+.form-control {
+    background-color: navy;
+} 
 * {
     box-sizing: border-box;
   }
@@ -26,7 +41,10 @@ h1 {
     line-height: 1.5;
     font-size: 16px;
   }
-
+textarea {
+    border-radius: 15px;
+    border-right: bold black;
+}
   /* CARDS */
   .card {
     margin: 0 0 20px 0;
