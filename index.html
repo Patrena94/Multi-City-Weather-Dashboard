@@ -14,44 +14,35 @@
 </head>
 
 <body>
-    <div class="row min-vh-100 no gutters">
-    <header class="col-12 col-lgp3 bg-light text-dark sitcky-top d-flex flex-column p-4 p-lg-3"> 
-        <h2 class ="text-left">Search for a City:</h2>
-        <form id="city-form">
-            <div class="form-group">
-                <input name="city" type="text" id="searchTerm"/>
-                <div class ="form-group">
-                    <button class="searchBtn" id="searchBtn">Search</button> 
-                </form> 
-            <section>
-            <div class="row">
-            <div class="col-sm-1">
-                <button class="cityBtn" id="City" type="submit">1stCity</button> 
-                <button class="cityBtn" id="City" type="submit">2ndCity</button>
-                <button class="cityBtn" id="City" type="submit">3rdCity</button>  
-                <button class="cityBtn" id="City" type="submit">4thCity</button>  
-                <button class="cityBtn" id="City" type="submit">5thCity</button>  
-                <button class="cityBtn" id="City" type="submit">6thCity</button>
-                <button class="cityBtn" id="City" type="submit">7thCity</button> 
-                <button class="cityBtn" id="City" type="submit">8thCity</button>       
-            </div>
-            </div>
-        </section>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class ="form-group">
+            <h2 class ="text-left">Search for a City:</h2>
+                <div class="form-group">
+                    <input name="city" type="text" id="searchTerm"/>
+                        <button class="searchBtn" id="searchBtn">Search</button> 
+                    </form> 
+                <section>
+                <div class="col-sm-4">
+                    <button class="btn btn-danger">test</button>
+                    <!-- <button class="cityBtn" id="City" type="submit">1stCity</button> 
+                    <button class="cityBtn" id="City" type="submit">2ndCity</button>
+                    <button class="cityBtn" id="City" type="submit">3rdCity</button>  
+                    <button class="cityBtn" id="City" type="submit">4thCity</button>  
+                    <button class="cityBtn" id="City" type="submit">5thCity</button>  
+                    <button class="cityBtn" id="City" type="submit">6thCity</button>
+                    <button class="cityBtn" id="City" type="submit">7thCity</button> 
+                    <button class="cityBtn" id="City" type="submit">8thCity</button>        -->
                 </div>
-        <main class="flex-row justify-space-between">  
-            <div class="col-12-col-md-8"></div>
-        <div class="card">
-            <h2 class ="card-header">List:<span id="searchTerm"></span></h2>
-            <div id="city-container" class="list-group"></div>  
-        </div>      
-        <div class="col-col-12-col-md-8"></div>
-        <div class="col-12col-md-8">
-            <h3>cityandDate<span id="searchTerm"></span></h3> 
-        <div class="col-12-col-md-8"></div>
-        <div class="card">
-            <h4 class =subtitle">5-Day Forecaset:</h4>
-          </div>
-        </main>
+                </div>
+            </section>
+        </div> 
+        </div>
+        <div class="col-sm-9"><textarea id="currentDay"class="formControl h-500 w-250 p-0"></textarea>
+        <div class="row">
+        <div class="col-sm-9"><textarea id="5-Day Forecast"class="formControl h-500 w-250 p-0"></textarea></div>
+        </div>
+        </div> 
 <script src=./assets/script.js></script>    
 </body>
 </html>
