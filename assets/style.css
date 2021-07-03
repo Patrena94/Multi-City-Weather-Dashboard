@@ -1,10 +1,65 @@
-
 h1 {
     background-color: Navy;
     color: white;
 }
-
-/* @media(min-width: 576px) {...}
-@media(min-width: 768px) {...}
-@media(min-width: 992px) {...}
-@media(min-width: 1200px) {...} */
+.searchBtn {
+        border: 1px solid black;
+        border-radius: 15px;
+        border-style: solid black;
+        color: white;
+        background-color: steelblue;
+        font-weight: bold;
+        padding: 10px 24px;
+        size: automatic;
+    }
+ input {
+     border-radius: 15px;
+ }
+ .btn-danger {
+    border: 1px solid black;
+    border-radius: 15px;
+    border-style: solid black;
+    color: black;
+    background-color: slategrey;
+    font-weight: bold;
+    padding: 10px 24px;
+    size: automatic;
+}   
+.form-control {
+    background-color: navy;
+} 
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: var(--dark);
+    line-height: 1.5;
+    font-size: 16px;
+  }
+textarea {
+    border-radius: 15px;
+    border-right: bold black;
+}
+  /* CARDS */
+  .card {
+    margin: 0 0 20px 0;
+    border: 3px solid var(--dark);
+    border-radius: var(--border-radius);
+  }
+  .card-header {
+    color: var(--primary);
+    background-color: var(--dark);
+    padding: 2.5%;
+    border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
+  }
+  
+  .card-body {
+    padding: 2.5%;
+  }
+  
+  

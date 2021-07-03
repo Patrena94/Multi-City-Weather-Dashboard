@@ -12,20 +12,38 @@
     <h1 class ="text-center">
         <span class ="oi oi-task d-inline d-lg-none"></span> Multi-City Weather Dashboard</h1>
 </head>
-<body>
-<div class ="row min-vh-100 no gutters">
-    <header class="col-12 col-lgp3 bg-light text-dark sitcky-top d-flex flex-column p-4 p-lg-3">
-    <h2 class ="text-center">Search for a City:</h2>
-    <form id="task-form">
-        <div class="form-group">
-            <input type="text" name="City-name" placeholder="Enter City"/>
-            <div class ="form-group">
-                <button class="btn" id="Search" type="submit">Search</button> 
-            </div>
-            </div>
 
-    </button>
-    </header> 
-</div>    
+<body>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class ="form-group">
+            <h2 class ="text-left">Search for a City:</h2>
+                <div class="form-group">
+                    <input name="cityName" type="text" id="searchTerm"/>
+                    <br/>
+                        <button class="searchBtn" id="searchBtn">Search</button> 
+                    </form> 
+                <section>
+                <div class="col-sm-4">
+                    <form id="search-form" onsubmit="submitform(event)"></form>
+                    <label for="city-name">Enter a city:</label>
+                    <input type="text" id=city-name" name="city-name"/>     
+                </form>  
+                </div id="city-btns"></div>
+            </section>
+        </div> 
+        </div>
+        <div class="container-md"><input id="response-container"class="formControl h-10000 w-250 p-0"/>
+        <div class="row">
+        <div class="col-sm-2"><textarea id="2-DayForecast"class="form-control h-500 w-250 p-0"></textarea></div>
+        <div class="col-sm-2"><textarea id="3-DayForecast"class="form-control h-500 w-250 p-0"></textarea></div>
+        <div class="col-sm-2"><textarea id="4-DayForecast"class="form-control h-500 w-250 p-0"></textarea></div>
+        <div class="col-sm-2"><textarea id="5-DayForecast"class="form-control h-500 w-250 p-0"></textarea></div>
+        <div class="col-sm-2"><textarea id="6-DayForecast"class="form-control h-500 w-250 p-0"></textarea></div>
+        </div>
+        </div> 
+<script src=./assets/script.js></script>    
 </body>
 </html>
+
+
