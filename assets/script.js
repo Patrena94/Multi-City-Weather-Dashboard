@@ -47,21 +47,6 @@ if(!ls){console.log ("there is not localStorage");
 } else{cityNameArr.push();
 }
 
-
-// if (localStorage.getItem("city-List") !== null) {
-//     for(var i=0; i < ls.length; i++){
-//         createnewbutton(cityNameArr[i]);
-//     }
-// }
-// for (var i= 0; i < cityNameArr.length; i++) {
-//     var newBtn = document.createElement("button");
-//     newBtn.innerText = cityNameArr[i];
-//     newBtn.addEventListener("click", function (event) {
-//         console.log(event.target.innerText);
-//     });
-// }
-//     cityBtns.append(newBtn);
-
 function submitForm(event){
     event.preventDefaullt();
     console.log("submitting form");
