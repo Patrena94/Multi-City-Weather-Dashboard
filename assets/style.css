@@ -14,17 +14,7 @@ h1 {
     }
  input {
      border-radius: 15px;
- }
- .btn-danger {
-    border: 1px solid black;
-    border-radius: 15px;
-    border-style: solid black;
-    color: black;
-    background-color: slategrey;
-    font-weight: bold;
-    padding: 10px 24px;
-    size: automatic;
-}   
+ }   
 .form-control {
     background-color: navy;
 } 
@@ -33,7 +23,7 @@ h1 {
   }
   
   body {
-    background-color: white;
+    background-color:slategray;
     margin: 0;
     padding: 0;
     font-family: "IBM Plex Sans", sans-serif;
@@ -47,19 +37,22 @@ textarea {
 }
   /* CARDS */
   .card {
-    margin: 0 0 20px 0;
-    border: 3px solid var(--dark);
-    border-radius: var(--border-radius);
+    background-color: slategray;
   }
   .card-header {
     color: var(--primary);
     background-color: var(--dark);
-    padding: 2.5%;
     border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
   }
   
   .card-body {
-    padding: 2.5%;
+    border:solid black;
+    background-color: steelblue;
+    border-radius: 15px;
   }
   
-  
+  .container-fluid {
+      border: solid black;
+      border-radius: 15px;
+      background-color: teal;
+  }
