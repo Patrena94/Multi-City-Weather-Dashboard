@@ -3,71 +3,70 @@ function weatherSearch(data) {
 var searchTerm =document.querySelector("#searchTerm").value
 fetch (`https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=2cccf24439236510b904f1eae27b1030&units=imperial`)
 .then(function(response){
-    console.log("1st response")
+    console.log("Weather")
     return response.json();
 })
 .then(function(response){
     console.log(response)
-    console.log(response.main.temp)
-    console.log(response.sys.visibility)
- })
- .then(function(response){
-    console.log(response)
-    console.log(response.list[40].wind)
- })
- fetch (`https://api.openweathermap.org/data/2.5/forecast?q=${searchTerm}&appid=2cccf24439236510b904f1eae27b1030&units=imperial`)
+    console.log("temp: "+response.main.temp)
+    console.log("wind: "+response.wind.gust)
+    console.log("visibility: "+response.visibility)
+    renderData(response);
+})
+
+ fetch (`https://api.openweathermap.org/data/2.5/forecast?q=${searchTerm}&appid=2cccf24439236510b904f1eae27b1030`)
 .then(function(response){
-    console.log("1st response")
+    console.log("Forecast response")
     return response.json();
+
 })
 .then(function(response){
     console.log(response)
-    console.log(response.list[32].main.temp)
-})
-.then(function(response){
-    console.log(response)
-    console.log(response.list[40].wind)
+    provideData(response);
+    generateData(response); 
 })
 }
+function provideData(data){
+    console.log("This is the data to provide data function", data);
+    document.querySelector("#city-name").value=city.name;
+}
+function renderData(data){
+  console.log("this is the data in render data function", data); 
+  document.querySelector("#Temp").value=data.name
+  document.querySelector("#Temp").value=data.main.temp;
+  document.querySelector("#Wind").value=data.wind.gust;
+  document.querySelector("#Humidity").value=data.main.humidity;
+}
+
 document.getElementById("searchBtn").addEventListener("click", weatherSearch)
-
-var responseContainer=document.querySelector("#response-container")
-
-var text = document.createElement("text");
-
-var cityFormEl = document.querySelector("#city-form");
-var cityInputEl = document.querySelector("#searchTerm");
-
-var formSubmitHandler = function(response){
-    responset.preventDefault();
-    console.log(response);  
-};
-
-var formEl=document.querySelector("#search-form");
-// formEl.addEventListener("submit", function(event)=>{
-//     event.preventDefault();
-//     console.log("submitting form");
-var cityNameArr=[]
-var ls=JSON.parse(localStorage.getItem("city-List"));
+var cityNameArr = ["searchTerm"];
+var ls = JSON.parse(localStorage.getItem("city-list"));
 var cityBtns = document.querySelector("#city-btns");
 
-if(!ls) {
-    console.log ("there is no localstorage");
-} else {cityNameArr.push();
-}    
-for (var i= 0; i < cityNameArr.length; i++) {
-    var newBtn = document.createElement("button");
-    newBtn.innerText = cityNameArr[i];
-    newBtn.addEventListener("click", function (event) {
-        console.log(event.target.innerText);
-    });
-    cityBtns.append(newBtn);
+if(!ls){console.log ("there is not localStorage");
+} else{cityNameArr.push();
 }
-function submitform(event){
-    event.preventDefualt();
+
+
+// if (localStorage.getItem("city-List") !== null) {
+//     for(var i=0; i < ls.length; i++){
+//         createnewbutton(cityNameArr[i]);
+//     }
+// }
+// for (var i= 0; i < cityNameArr.length; i++) {
+//     var newBtn = document.createElement("button");
+//     newBtn.innerText = cityNameArr[i];
+//     newBtn.addEventListener("click", function (event) {
+//         console.log(event.target.innerText);
+//     });
+// }
+//     cityBtns.append(newBtn);
+
+function submitForm(event){
+    event.preventDefaullt();
     console.log("submitting form");
-var cityEl=document.querySelector("#city-name");
-var city=cityEl.value;
+var cityEl = document.querySelector("#city-name");
+var city = cityEl.value;
 console.log("city is:", city);    
 }
 // })
@@ -79,14 +78,14 @@ console.log("city is:", city);
 // cityFormEl.addEventListener("weatherSearch", formSubmitHandler);
 
 // get value from input element
-var cityname = cityInputEl.value.trim();
+// var cityname = cityInputEl.value.trim();
 
-if (cityname) {
-  response(cityname);
-  cityInputEl.value = "";
-} else {
-  alert("Please provide City name");
-}
+// if (cityname) {
+//   response(cityname);
+//   cityInputEl.value = "";
+// } else {
+//   alert("Please provide City name");
+// }
 // function displayDate(){
 //    var currentDay = document.querySelector("#currentDay")
 //    var currentDate= moment();

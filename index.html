@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/style.css" />
     <h1 class ="text-center">
+        <title>Multi-City Weather Dashboard</title>
         <span class ="oi oi-task d-inline d-lg-none"></span> Multi-City Weather Dashboard</h1>
 </head>
 
@@ -21,29 +22,78 @@
                 <div class="form-group">
                     <input name="cityName" type="text" id="searchTerm"/>
                     <br/>
-                        <button class="searchBtn" id="searchBtn">Search</button> 
+                    <button type="submit" class="searchBtn" id="searchBtn">Search</button> 
                     </form> 
                 <section>
                 <div class="col-sm-4">
-                    <form id="search-form" onsubmit="submitform(event)"></form>
-                    <label for="city-name">Enter a city:</label>
-                    <input type="text" id=city-name" name="city-name"/>     
                 </form>  
-                </div id="city-btns"></div>
+            </div>
+        </div>
             </section>
         </div> 
         </div>
-        <div class="container-md"><input id="response-container"class="formControl h-10000 w-250 p-0"/>
-        <div class="row">
-        <div class="col-sm-2"><textarea id="2-DayForecast"class="form-control h-500 w-250 p-0"></textarea></div>
-        <div class="col-sm-2"><textarea id="3-DayForecast"class="form-control h-500 w-250 p-0"></textarea></div>
-        <div class="col-sm-2"><textarea id="4-DayForecast"class="form-control h-500 w-250 p-0"></textarea></div>
-        <div class="col-sm-2"><textarea id="5-DayForecast"class="form-control h-500 w-250 p-0"></textarea></div>
-        <div class="col-sm-2"><textarea id="6-DayForecast"class="form-control h-500 w-250 p-0"></textarea></div>
+        <content class="col-sm-8">
+            <div id="searchTerm" class="pt-3">
+            <div class="card">
+            <div class="card-body">
+            <h2 class="card-title id="name"></h2>
+            <div class="card-text mt-0">
+                <p>Temp:  <input id="Temp"/></p>
+                <p>Wind:  <input id="Wind"/></p>
+                <p>Humidity:  <input id="Humidity"/></p>    
+            </div>   
+            </div>    
+            </div>
+        
+            <section class="container-fluid" id="5DayContainer">
+                <h2> 5-Day forecast:</h2>
+                <div class="row">
+            <div class="col-sm-2">
+                <div class="response-container">
+                    <h3 class="date"></h3>
+                    <p> Temp: <span id="Temperature"></span></p>
+                    <p>Wind: <span id="Windgust"></span></p>
+                    <p>Humidity: <span id="Humidityhealth"></span></p>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="response-container">
+                    <h3 class="date"></h3>
+                    <p> Temp: <span id="Temperature"></span></p>
+                    <p>Wind: <span id="Windgust"></span></p>
+                    <p>Humidity: <span id="Humidityhealth"></span></p>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="response-container">
+                    <h3 class="date"></h3>
+                    <p> Temp: <span id="Temperature"></span></p>
+                    <p>Wind: <span id="Windgust"></span></p>
+                    <p>Humidity: <span id="Humidityhealth"></span></p>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="response-container">
+                    <h3 class="date"></h3>
+                    <p> Temp: <span id="Temperature"></span></p>
+                    <p>Wind: <span id="Windgust"></span></p>
+                    <p>Humidity: <span id="Humidityhealth"></span></p>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="response-container">
+                    <h3 class="date"></h3>
+                    <p> Temp: <span id="Temperature"></span></p>
+                    <p>Wind: <span id="Windgust"></span></p>
+                    <p>Humidity: <span id="Humidityhealth"></span></p>
+                </div>
+            </div>
         </div>
-        </div> 
-<script src=./assets/script.js></script>    
-</body>
-</html>
-
-
+            </section>
+            </div>
+        </content>
+        </div>
+        </main>
+           <script src="./assets/script.js"></script>
+        </body>
+        </html>
