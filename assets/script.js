@@ -14,7 +14,7 @@ fetch (`https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=2c
     renderData(response);
 })
 
- fetch (`https://api.openweathermap.org/data/2.5/forecast?q=${searchTerm}&appid=2cccf24439236510b904f1eae27b1030`)
+ fetch (`https://api.openweathermap.org/data/2.5/forecast?q=${searchTerm}&appid=2cccf24439236510b904f1eae27b1030&units=imperial`)
 .then(function(response){
     console.log("Forecast response")
     return response.json();
@@ -22,20 +22,25 @@ fetch (`https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=2c
 })
 .then(function(response){
     console.log(response)
-    provideData(response);
-    generateData(response); 
+    provideData(response); 
 })
 }
 function provideData(data){
     console.log("This is the data to provide data function", data);
-    document.querySelector("#city-name").value=city.name;
+    document.querySelector("#Temperature").value=data.list[0].main.temp
+    document.querySelector("#Humidityhealth").value=data.list[0].main.humidity
+    document.querySelector("#Windgust").value=data.list[0].wind.gust
+    document.querySelector("#icon").src=data.list[0].weather[0].icon
+    
+    // document.querySelector("#name").city.name;
 }
 function renderData(data){
   console.log("this is the data in render data function", data); 
-  document.querySelector("#Temp").value=data.name
+  document.querySelector("#name").value=data.name
   document.querySelector("#Temp").value=data.main.temp;
   document.querySelector("#Wind").value=data.wind.gust;
   document.querySelector("#Humidity").value=data.main.humidity;
+//   document.querySelection("#name").value=data.name;
 }
 
 document.getElementById("searchBtn").addEventListener("click", weatherSearch)
@@ -53,6 +58,14 @@ function submitForm(event){
 var cityEl = document.querySelector("#city-name");
 var city = cityEl.value;
 console.log("city is:", city);    
+}
+var currentDate=new Date();
+function getTodaysDate(date) {
+    var d = new Date(date),
+    month ="" + (d.getMonth() +1),
+    day = "" + d.getDate(),
+    year = d.getFullYear();
+    return [month, day, year].join("/");
 }
 // })
 // var cityBtn=["City"]

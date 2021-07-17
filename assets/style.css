@@ -12,9 +12,20 @@ h1 {
         padding: 10px 24px;
         size: automatic;
     }
- input {
+  .form-group input {border-radius: 15px;
+    border: solid black;
+
+  }
+
+ .col-sm-8 input {
      border-radius: 15px;
+     border:none;
+     background-color:steelblue;
  }   
+
+ .col-sm-8 h2 input  {
+  text-align: center;
+}   
 .form-control {
     background-color: navy;
 } 
@@ -55,4 +66,35 @@ textarea {
       border: solid black;
       border-radius: 15px;
       background-color: teal;
+      padding-bottom: 15px;
   }
+  .col-sm-2 .response-container-1 { border: solid black;
+  border-radius: 15px;
+  border-spacing: 20px;
+}
+
+.col-sm-2 .response-container-2 { border: solid black;
+  border-radius: 15px;
+ border-spacing: 20px;
+}
+
+.col-sm-2 .response-container-3 { border: solid black;
+  border-radius: 15px;
+  border-spacing: 25px;
+}
+
+.col-sm-2 .response-container-4 { border: solid black;
+  border-radius: 15px;
+  align-items: center;
+}
+
+.col-sm-2 .response-container-5 { border: solid black;
+  border-radius: 15px;
+  align-items: center;
+}
+
+.col-sm-2 input {background-color: teal;
+border: radius 15px;
+border: none;
+size: 4px;
+}
