@@ -1,6 +1,12 @@
+var searchHistory=[];
 function weatherSearch(data) {
-    data.preventDefault()
-var searchTerm =document.querySelector("#searchTerm").value
+    // data.preventDefault()
+var searchTerm = data
+searchHistory.push(searchTerm) 
+console.log(searchHistory, searchTerm);
+localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+rendersearchHistory ()
+
 fetch (`https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=2cccf24439236510b904f1eae27b1030&units=imperial`)
 .then(function(response){
     console.log("Weather")
@@ -46,6 +52,20 @@ uvIndexEl.textContent=uvIndex;
     provideData(response); 
 })
 }
+function rendersearchHistory(){
+    var searchitems=localStorage.getItem("searchHistory")
+    var HistoryContainer=document.querySelector(".searchHistory")
+    HistoryContainer.innerHTML="";
+    searchitems=(searchitems)? JSON.parse(searchitems):[];
+for (var i=0; i<searchitems.length; i++){
+var newBtn=document.createElement("div")
+newBtn.innerHTML=`<button type="submit" class="cityBtn" id="citySearch">${searchitems[i]}</button>`
+HistoryContainer.append(newBtn)
+}
+
+// var newBtn=document.createElement("button");
+// newBtn.innerHTML=searchHistory
+}
 // var fivedayForecastObj=[];
 // for (var i=0; 1< provideData.list.length; i++) {
 //     if(i > 8 ===0){
@@ -90,13 +110,29 @@ function renderData(data){
   document.querySelector("#Wind").value=data.wind.gust + "MPH";
   document.querySelector("#Humidity").value=data.main.humidity +"%";
   document.querySelector("#UVI").value=data.current.uvi;
-//   document.querySelection("#name").value=data.name;
 }
 
-document.getElementById("searchBtn").addEventListener("click", weatherSearch)
+document.getElementById("searchBtn").addEventListener("click", function(){
+    var searchTerm =document.querySelector("#searchTerm").value
+    weatherSearch(searchTerm)});
+// document.getElementById("citySearch").addEventListener("click", function(){
+//         var searchTerm =document.querySelector("#citySearch").textContent
+//         weatherSearch(searchTerm)});
+//         console.log(searchTerm);
+document.getElementbyId("citysearch").addEventListener("click", function(e){
+    if(e.target && e.target.id=="citySearch"){
+        var searchTerm =document.querySelector("#"+e.target.id).textContent
+                weatherSearch(searchTerm)
+                console.log(searchTerm);   
+    
+    }
+})
+    
+// document.getElementById("cityBtn").addEventListener("click", weatherSearch)
+
 var cityNameArr = ["searchTerm"];
 var ls = JSON.parse(localStorage.getItem("city-list"));
-var cityBtns = document.querySelector("#city-btns");
+var searchBtns = document.querySelector("#searchBtn");
 
 if(!ls){console.log ("there is not localStorage");
 } else{cityNameArr.push();
@@ -108,14 +144,14 @@ function submitForm(event){
 var cityEl = document.querySelector("#city-name");
 var city = cityEl.value;
 console.log("city is:", city);    
-}
-var currentDate=new Date();
-function getTodaysDate(date) {
-    var d = new Date(date),
-    month ="" + (d.getMonth() +1),
-    day = "" + d.getDate(),
-    year = d.getFullYear();
-    return [month, day, year].join("/");
+// }
+// var currentDate=new Date();
+// function getTodaysDate(date) {
+//     var d = new Date(date),
+//     month ="" + (d.getMonth() +1),
+//     day = "" + d.getDate(),
+//     year = d.getFullYear();
+//     return [month, day, year].join("/");
 // }
 // getElementById("searchBtn")
 // .addEventListener('click', function (event) {
@@ -126,23 +162,7 @@ function getTodaysDate(date) {
 //     savedCities.insertAdjacentHTML("afterbegin", `<button type="button" class="button is-fullwidth mb-1" cityName="${searchTerm}" onclick="pushCity(this)">${searchTerm}</button>`)
 //     localStorage.setItem('lastsearchTerm', city)
 //     document.getElementById('searchError').textContent = ""
-// })
-// })
-// var cityBtn=["City"]
-// searchBtn.addEventListener("click", function () {
-//     cityBtn.classList.remove("hide")
-//     weatherSearch()
-// })
-// cityFormEl.addEventListener("weatherSearch", formSubmitHandler);
 
-// get value from input element
-// var cityname = cityInputEl.value.trim();
-
-// if (cityname) {
-//   response(cityname);
-//   cityInputEl.value = "";
-// } else {
-//   alert("Please provide City name");
 // }
 // function displayDate(){
 //    var currentDay = document.querySelector("#currentDay")
