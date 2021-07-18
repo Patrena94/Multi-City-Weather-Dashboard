@@ -61,7 +61,10 @@ textarea {
     background-color: steelblue;
     border-radius: 15px;
   }
-  
+  .currentDate {
+    font-size: 8px;
+    font-style: italic;
+  }
   .container-fluid {
       border: solid black;
       border-radius: 15px;
@@ -98,3 +101,8 @@ border: radius 15px;
 border: none;
 size: 4px;
 }
+
+.flex {display:flex;
+align-items: center;
+}
+#icon {size: 2px;}
