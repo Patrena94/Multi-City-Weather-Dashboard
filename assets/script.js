@@ -9,7 +9,7 @@ rendersearchHistory ()
 
 fetch (`https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=2cccf24439236510b904f1eae27b1030&units=imperial`)
 .then(function(response){
-    console.log("Weather")
+    // console.log("Weather", response)
     return response.json();
 })
 .then(function(response){
@@ -25,16 +25,20 @@ fetch (`https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=2c
 .then(function(uviData){
     console.log("This is your UVI data");
     console.log(uviData);
-    var uvIndex=uviData.value;
-    if(uvIndex <=5 ) {backgroundcolor = "light green";
+    document.querySelector("#uvi").value=uviData.current.uvi;
+    var uviIndex=uviData.value;
+    var backgroundcolor;
+    if(uviIndex <=5 ) {backgroundcolor = "light green";
+    document.querySelector("#uviIndex").setAttribute("style","background-color: light green;");
 }
-else if (uvIndex <= 10){backgroundcolor="purple";
+else if (uviIndex <= 10){backgroundcolor="purple";
+document.querySelector("#uviIndex").setAttribute("class",backgroundcolor);
 }
 
-else if (uvIndex > 10){backgroundcolor="red";
+else if (uviIndex > 10){backgroundcolor="red";
+document.querySelector("#uviIndex").setAttribute("class",backgroundcolor);
 }
-document.querySelector("#uvIndex").setAttribute("class",backgroundcolor);
-uvIndexEl.textContent=uvIndex;
+uvIndexEl.textContent=uviIndex;
 })
     // .then(function(response){
     //     console.log(response, "this is UVI data");
@@ -109,7 +113,6 @@ function renderData(data){
   document.querySelector("#Temp").value=data.main.temp.toFixed(1) + "°F";
   document.querySelector("#Wind").value=data.wind.gust + "MPH";
   document.querySelector("#Humidity").value=data.main.humidity +"%";
-  document.querySelector("#UVI").value=data.current.uvi;
 }
 
 document.getElementById("searchBtn").addEventListener("click", function(){
