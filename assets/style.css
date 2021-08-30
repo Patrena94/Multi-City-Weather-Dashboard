@@ -12,6 +12,15 @@ h1 {
         padding: 10px 24px;
         size: automatic;
     }
+   .cityBtn {border: 1px solid black;
+    border-radius: 15px;
+    border-style: solid black;
+    color: white;
+    background-color: steelblue;
+    font-weight: bold;
+    padding: 10px 24px;
+    size: automatic;
+  } 
   .form-group input {border-radius: 15px;
     border: solid black;
 
@@ -21,11 +30,16 @@ h1 {
      border-radius: 15px;
      border:none;
      background-color:steelblue;
- }   
+     box-sizing: automatic;
+     color: black;
+     font-weight: bold;
+ } 
+ .col-sm-8 p {
+   color: white;
+   font-weight: bold;
+ }
 
- .col-sm-8 h2 input  {
-  text-align: center;
-}   
+
 .form-control {
     background-color: navy;
 } 
@@ -60,10 +74,6 @@ textarea {
     border:solid black;
     background-color: steelblue;
     border-radius: 15px;
-  }
-  .currentDate {
-    font-size: 8px;
-    font-style: italic;
   }
   .container-fluid {
       border: solid black;
